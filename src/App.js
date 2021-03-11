@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
+import { Client as Styletron } from "styletron-engine-atomic";
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+import ShopProvider from './context/shopContext'
 
-function App() {
+import HomePage from './pages/HomePage'
+import ProductPage from './pages/ProductPage'
+import Navbar from './components/NavBar'
+
+const debug = process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
+const engine = new Styletron();
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ShopProvider>
+      <StyletronProvider value={engine} debug={debug} debugAfterHydration>
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route path="/product/:id">
+              <ProductPage />
+            </Route>
+            <Route path="/">
+              <HomePage />
+            </Route> 
+          </Switch>
+        </Router>
+      </StyletronProvider>
+    </ShopProvider>
   );
 }
 
