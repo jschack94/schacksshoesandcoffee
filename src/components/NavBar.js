@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
-import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
-import { Container, Anchor, Icon } from 'atomize'
+import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
+import { Icon } from 'atomize'
 import logo from '../assets/commerce.png';
 import { ShoppingCart } from '@material-ui/icons';
 import { Link } from 'react-router-dom'
