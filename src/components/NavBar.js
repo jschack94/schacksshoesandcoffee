@@ -1,8 +1,8 @@
-import React, {useContext} from 'react'
+import React from 'react'
  import { Container, Anchor, Icon } from 'atomize'
  import { Link } from 'react-router-dom'
  import logo from '../assets/commerce.png';
- import { ShopContext } from '../context/shopContext'
+
 
  const Navbar = () => {
 
@@ -14,7 +14,6 @@ import React, {useContext} from 'react'
        };
 
 
-     const { openCart } = useContext(ShopContext)
 
 
 
