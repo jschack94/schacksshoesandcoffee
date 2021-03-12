@@ -15,9 +15,18 @@ const engine = new Styletron();
 
 const App = () => {
   return (
+   
     <ShopProvider>
+      
       <StyletronProvider value={engine} debug={debug} debugAfterHydration>
+    
         <Router>
+        <p></p>
+       hi
+       <p></p>
+       hi
+       <p></p>
+        
           <Navbar />
           <Switch>
             <Route path="/product/:id">
@@ -28,8 +37,10 @@ const App = () => {
             </Route> 
           </Switch>
         </Router>
+        
       </StyletronProvider>
     </ShopProvider>
+    
   );
 }
 
