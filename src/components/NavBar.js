@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
-import { Icon } from 'atomize'
+
 import logo from '../assets/commerce.png';
 import { ShoppingCart } from '@material-ui/icons';
 import { Link } from 'react-router-dom'
@@ -9,19 +9,12 @@ import useStyles from './styles';
 
 const Navbar = () => {
 
-    const mystyle = {
-        color: "white",
-        backgroundColor: "DodgerBlue",
-        padding: "10px",
-        fontFamily: "Arial",
-        position: "static"
-      };
 
-      const classes = useStyles();
+const classes = useStyles();
 
 
 
-    const { openCart } = useContext(ShopContext)
+
 
    
 
