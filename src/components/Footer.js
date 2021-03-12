@@ -12,17 +12,17 @@ import './footer.css';
 				<h3>Schack's<span>Shoes</span></h3>
 
 				<p class="footer-links">
-					<a href="#" class="link-1">Home</a>
+					<a> Home< /a>
 					
-					<a href="#">About</a>
+					<a> About </a>
 				
-					<a href="#">Products</a>
+					<a> Products </a>
 				
-					<a href="#">Blog</a>
+					<a> FAQ </a>
 					
-					<a href="#">FAQ</a>
+					<a> Blog </a>
 					
-					<a href="#">Contact</a>
+					
 				</p>
 
 				<p class="footer-company-name">Schack's Shoes © 2020</p>
@@ -40,10 +40,6 @@ import './footer.css';
 					<p>+1.262.894.0630</p>
 				</div>
 
-				<div>
-					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">jschack94@gmail.com</a></p>
-				</div>
 
 			</div>
 
