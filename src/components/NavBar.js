@@ -1,45 +1,38 @@
 import React, {useContext} from 'react'
-import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
+ import { Container, Anchor, Icon } from 'atomize'
+ import { Link } from 'react-router-dom'
+ import logo from '../assets/commerce.png';
+ import { ShopContext } from '../context/shopContext'
 
-import logo from '../assets/commerce.png';
-import { ShoppingCart } from '@material-ui/icons';
-import { Link } from 'react-router-dom'
-import { ShopContext } from '../context/shopContext'
-import useStyles from './styles';
+ const Navbar = () => {
 
-const Navbar = () => {
-
-
-const classes = useStyles();
-
-
-
+     const mystyle = {
+         color: "black",
+         padding: "10px",
+         fontFamily: "Arial",
+         position: "static"
+       };
 
 
-   
+     const { openCart } = useContext(ShopContext)
 
-    return (
-        <>
-      <AppBar position="fixed" className={classes.appBar} color="inherit">
-        <Toolbar>
-          <Typography component={Link} to="/" variant="h6" className={classes.title} color="inherit">
-            <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> Schack's Shoes
-          </Typography>
-          <div className={classes.grow} />
-          
-          
-            <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
-            
-                <ShoppingCart />
-            
-            </IconButton>
-        
+
+
+     return (
+         <>  
          
-        </Toolbar>
-      </AppBar>
-   
-    </>
-  );
-};
+         
+             <Container d="flex" flexDir="row" p="2rem" justify="space-between" >
+               
+                <Link to="/"><Icon name="Store" size="30px" color="black500" /></Link>
+                <h1> <img src={logo} alt="commerce.js" height="45px" /> Schack's Shoes</h1>
+                
 
-export default Navbar
+                 <Anchor onClick={() => openCart()}><Icon name="Bag" size="20px" color="black500" /></Anchor>
+             </Container>
+            
+         </>
+     )
+ }
+
+ export default Navbar
